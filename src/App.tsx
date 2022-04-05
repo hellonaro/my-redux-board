@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import styled from 'styled-components'
 import './App.css';
+import Profile from './components/molecules/Profile'
+import CategoryList from './components/organisms/CategoryList';
+import CardList from './components/organisms/CardList';
 
-function App() {
+const FlexBox = styled.div`
+  display: flex;
+`
+
+const SideBar = styled.div`
+  padding: 0px 20px 0px 20px;
+  width: 250px;
+  height: 100vh;
+  display: inline-block;
+  background-color:whitesmoke;
+`
+
+const Main = styled.div`
+  padding: 5px;
+  width: 100%;
+  display: flex;
+`
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FlexBox>
+      <SideBar>
+        <Profile />
+        <CategoryList />
+      </SideBar>
+      <Main>
+        <CardList />
+      </Main>
+    </FlexBox>
   );
 }
 
